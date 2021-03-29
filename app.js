@@ -6,6 +6,7 @@ let options;
 let marker;
 let info;
 let zoom = 8;
+let weatherModel;
 
 button.addEventListener('click', function () {
     getWeatherByCity(input.value)
@@ -118,7 +119,6 @@ function getWeatherByCoordinates(lat, lon) {
                     return;
                 }
 
-                // Examine the text in the response
                 response.json().then(function (data) {
                     return data
                 });
@@ -137,7 +137,6 @@ function getWeatherByCity(city) {
                     return;
                 }
 
-                // Examine the text in the response
                 response.json().then(function (data) {
                     weatherModel = data
                     createMap()
